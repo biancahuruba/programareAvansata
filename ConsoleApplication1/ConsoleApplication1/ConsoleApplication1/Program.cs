@@ -120,7 +120,7 @@ namespace ConsoleApplication1
             //double nrOfKMLeft = mercedes4.ShowRemainingNoOfKM(10,7);
             //Console.WriteLine("Remind km=" + nrOfKMLeft);
             //Console.WriteLine(FIZBUZ.ShowFizBuz(15));
-             //
+           
             //Tema Curs 2
             //Exercitiul 1
             Mercedes mercedes1 = new Mercedes();
