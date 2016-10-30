@@ -32,15 +32,17 @@ namespace ConsoleApplication1
             Console.WriteLine("Merces no=" + c);
         }
 
-        public void StartEngine()
+        public string StartEngine()
         {
-            Console.WriteLine("Engine started");
-
+            string start = "Engine started";
+            return start;
         }
 
-        public void ShowRemainingNoOfKM(int noOfFuelLiters, int Consumption)
+        public int ShowRemainingNoOfKM(int noOfFuelLiters, int Consumption)
         {
-            Console.WriteLine("Remaining km: "+noOfFuelLiters / Consumption * 100);
+            int  result = 0;
+            result = noOfFuelLiters / Consumption * 100;
+            return result; ;
         }
         internal int Price {
             get { return _Price; }
@@ -122,14 +124,20 @@ namespace ConsoleApplication1
             //Tema Curs 2
             //Exercitiul 1
             Mercedes mercedes1 = new Mercedes();
-            mercedes1.StartEngine();
+            //mercedes1.StartEngine();
 
-            //Ecercitiul 2
+            //Exercitiul 2
             //metoda nu calculeaza corect deoarece la impartirea: noOfFuelLiters / Consumption
             //se ia intregul impartirii si iqnora partea fractionara
             //acest lucru se intampla deoarece noi lucram cu valori int
-            mercedes1.ShowRemainingNoOfKM(23, 20);
-            mercedes1.ShowRemainingNoOfKM(10, 7);
+            //mercedes1.ShowRemainingNoOfKM(23, 20);
+            //mercedes1.ShowRemainingNoOfKM(10, 7);
+
+            //Exercitiul 3
+            //metoda ShowRemainingNoOfKM inca nu functioneaza corect, datorita impartirii mentionate mai sus
+            Console.WriteLine(mercedes1.StartEngine());
+            Console.WriteLine("Remaining km: " + mercedes1.ShowRemainingNoOfKM(23, 20));
+            Console.WriteLine("Remaining km: " + mercedes1.ShowRemainingNoOfKM(23, 20));
             Console.ReadKey();
         }
     }
