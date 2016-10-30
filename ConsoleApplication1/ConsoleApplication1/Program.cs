@@ -8,18 +8,21 @@ using System.Threading.Tasks;
 //facand clasa si proprietatile internal, programul ruleaza si afiseaza pe consola
 namespace ConsoleApplication1
 {
-    internal class Mercedes : AbstractCar {
+    internal class Mercedes : AbstractCar
+    {
         private string _Description;
         private int _Price;
         private int counter;
         public static int staticcounter;
-        public Mercedes() {
-            _Description ="E Class";
-            _Price =67000;
+        public Mercedes()
+        {
+            _Description = "E Class";
+            _Price = 67000;
         }
         public Mercedes(int n) { }
 
-        public void PrintMercedesLogo() {
+        public void PrintMercedesLogo()
+        {
 
             Console.WriteLine("This is from Mercedes");
             counter++;
@@ -27,11 +30,13 @@ namespace ConsoleApplication1
             PrintMercedesLogo();
         }
 
-        public void PrintNewMercedes(int c) {
+        public void PrintNewMercedes(int c)
+        {
             if (c == 3) { return; }
             Console.WriteLine("Merces no=" + c);
         }
-        public string StartEngine(int noOfMilisec) {
+        public string StartEngine(int noOfMilisec)
+        {
             string start = "The car is starting in {" + noOfMilisec + "} milliseconds";
             return start;
         }
@@ -44,50 +49,68 @@ namespace ConsoleApplication1
 
         public int ShowRemainingNoOfKM(int noOfFuelLiters, int Consumption)
         {
-            int  result = 0;
+            int result = 0;
             result = noOfFuelLiters / Consumption * 100;
             return result; ;
         }
-        internal int Price {
+        public double CalculateConsumption(params int[] kms)
+        {
+            double sum = 0;
+            foreach (int km in kms)
+                sum += km;
+            return sum / 100 * 7;
+        }
+
+        internal int Price
+        {
             get { return _Price; }
             set { _Price = value; }
         }
-        internal string Description {
+        internal string Description
+        {
             get { return _Description; }
             set { _Description = value; }
         }
 
     }
-    interface ICar {
+    interface ICar
+    {
     }
-    public abstract class AbstractCar : ICar {
+    public abstract class AbstractCar : ICar
+    {
     }
-    struct EngineStruct {
+    struct EngineStruct
+    {
     }
 
-    class FIZBUZ {
+    class FIZBUZ
+    {
 
-        public static string ShowFizBuz(int recivednr) {
+        public static string ShowFizBuz(int recivednr)
+        {
             if (recivednr % 15 == 0) { return "Fiz Buz"; }
-         else if (recivednr % 3 == 0) { return "Fiz"; }
-          else if (recivednr % 5 == 0) { return "Buz"; }
+            else if (recivednr % 3 == 0) { return "Fiz"; }
+            else if (recivednr % 5 == 0) { return "Buz"; }
             else { return "" + recivednr; }
         }
     }
     class Program
     {
         static int counter;
-        static void PrintLogo() {
+        static void PrintLogo()
+        {
             Console.WriteLine("I am learning C#");
             Console.WriteLine("C# is great!");
             PrintLogo2();
         }
 
-        static void PrintLogo(int i) {
+        static void PrintLogo(int i)
+        {
             Console.WriteLine(i);
         }
 
-        static void PrintLogo2() {
+        static void PrintLogo2()
+        {
             counter++;
             if (counter == 3) { return; }
             Console.WriteLine("This is PrintLogo2!");
@@ -124,7 +147,7 @@ namespace ConsoleApplication1
             //double nrOfKMLeft = mercedes4.ShowRemainingNoOfKM(10,7);
             //Console.WriteLine("Remind km=" + nrOfKMLeft);
             //Console.WriteLine(FIZBUZ.ShowFizBuz(15));
-             //
+            //
             //Tema Curs 2
             //Exercitiul 1
             Mercedes mercedes1 = new Mercedes();
@@ -145,7 +168,12 @@ namespace ConsoleApplication1
 
             //Exercitiul 4
             Console.WriteLine(mercedes1.StartEngine(20));
-           
+
+            //Ecercitiul 5
+            Console.WriteLine("Consumption is: " + mercedes1.CalculateConsumption(8, 9, 0, 11));
+            Console.WriteLine("Consumption is: " + mercedes1.CalculateConsumption(8, 9, -7, 11));
+            Console.WriteLine("Consumption is: " + mercedes1.CalculateConsumption(8));
+
             Console.ReadKey();
         }
     }
