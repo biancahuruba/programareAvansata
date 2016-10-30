@@ -38,11 +38,9 @@ namespace ConsoleApplication1
 
         }
 
-        public double ShowRemainingNoOfKM(double noOfFuelLiters, double Consumption)
+        public void ShowRemainingNoOfKM(int noOfFuelLiters, int Consumption)
         {
-            double result = 0;
-            result = noOfFuelLiters / Consumption * 100;
-            return result;
+            Console.WriteLine("Remaining km: "+noOfFuelLiters / Consumption * 100);
         }
         internal int Price {
             get { return _Price; }
@@ -125,6 +123,13 @@ namespace ConsoleApplication1
             //Exercitiul 1
             Mercedes mercedes1 = new Mercedes();
             mercedes1.StartEngine();
+
+            //Ecercitiul 2
+            //metoda nu calculeaza corect deoarece la impartirea: noOfFuelLiters / Consumption
+            //se ia intregul impartirii si iqnora partea fractionara
+            //acest lucru se intampla deoarece noi lucram cu valori int
+            mercedes1.ShowRemainingNoOfKM(23, 20);
+            mercedes1.ShowRemainingNoOfKM(10, 7);
             Console.ReadKey();
         }
     }
