@@ -31,6 +31,10 @@ namespace ConsoleApplication1
             if (c == 3) { return; }
             Console.WriteLine("Merces no=" + c);
         }
+        public string StartEngine(int noOfMilisec) {
+            string start = "The car is starting in {" + noOfMilisec + "} milliseconds";
+            return start;
+        }
 
         public string StartEngine()
         {
@@ -138,6 +142,10 @@ namespace ConsoleApplication1
             Console.WriteLine(mercedes1.StartEngine());
             Console.WriteLine("Remaining km: " + mercedes1.ShowRemainingNoOfKM(23, 20));
             Console.WriteLine("Remaining km: " + mercedes1.ShowRemainingNoOfKM(23, 20));
+
+            //Exercitiul 4
+            Console.WriteLine(mercedes1.StartEngine(20));
+           
             Console.ReadKey();
         }
     }
