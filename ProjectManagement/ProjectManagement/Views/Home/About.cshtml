@@ -2,6 +2,36 @@
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Author</h3>
+@model ProjectManagement.Models.AboutModel
+<h2>@Model.Message</h2>
+<font color="red">
+    <h3>@Model.Author</h3>
+</font>
 
-<p>Use this area to provide additional information.</p>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<table style="width:100%">
+    <tr>
+        <th>Like</th>
+        <th>Unlike</th>
+        <th>Whatever</th>
+    </tr>
+    <tr>
+        <td>Math</td>
+        <td>Seafood</td>
+        <td>Leaves</td>
+    </tr>
+    <tr>
+        <td>Coding</td>
+        <td>Noise</td>
+        <td>Windows</td>
+    </tr>
+</table>
+</br>
+<p>I like Mathematics and Coding.</p>
+<br>I dont't like the seafood or the noise.</br>
+<br> I don't really care about leaves or windows.</br>
