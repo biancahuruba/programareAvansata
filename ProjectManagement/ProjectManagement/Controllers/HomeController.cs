@@ -16,6 +16,7 @@ namespace ProjectManagement.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            ViewBag.Author = "Huruba Bianca-Maria";
 
             return View();
         }
