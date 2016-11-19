@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjectManagement.Models;
 
 namespace ProjectManagement.Controllers
 {
@@ -18,7 +19,11 @@ namespace ProjectManagement.Controllers
             ViewBag.Message = "Your application description page.";
             ViewBag.Author = "Huruba Bianca-Maria";
 
-            return View();
+            var model = new AboutModel();
+            model.Message = "Hello!";
+            model.Author = "Huruba Bianca";
+
+            return View(model);
         }
 
         public ActionResult Contact()
