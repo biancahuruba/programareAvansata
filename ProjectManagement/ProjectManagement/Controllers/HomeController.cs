@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjectManagement.Models;
+using System.Collections.Generic;
 
 namespace ProjectManagement.Controllers
 {
@@ -33,6 +34,14 @@ namespace ProjectManagement.Controllers
             return View();
         }
 
-
+        public void Average(List<double> list) {
+            double sum = 0;
+            double i = 0;
+            foreach (double element in list){
+                sum = sum + element;
+                i++;
+            }
+            double average = sum / i;
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace ProjectManagement.Controllers
         public ProjectController() { }
         public ActionResult DoAnAction() {
            
-            return Content("Hello World!");
+            return View("Hello World!");
         }
     }
 }
