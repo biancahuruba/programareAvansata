@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCCurs7", "MVCCurs7\MVCCurs7.csproj", "{1F34AE7B-F886-4744-8049-57A1F7FBDEAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F34AE7B-F886-4744-8049-57A1F7FBDEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F34AE7B-F886-4744-8049-57A1F7FBDEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F34AE7B-F886-4744-8049-57A1F7FBDEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F34AE7B-F886-4744-8049-57A1F7FBDEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
