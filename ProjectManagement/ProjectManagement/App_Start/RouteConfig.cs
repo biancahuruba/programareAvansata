@@ -13,11 +13,10 @@ namespace ProjectManagement
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
-                routes.MapRoute(
-               "Project",
-               "Project/doanaction",
-                new { controller = "Project", action = "doanaction", name = UrlParameter.Optional });
+            routes.MapRoute(
+                name: "Project", 
+                url: "Project/doanaction", 
+                defaults: new { controller = "Project", action = "doanaction", name = UrlParameter.Optional });
 
 
 

@@ -43,5 +43,10 @@ namespace ProjectManagement.Controllers
             }
             double average = sum / i;
         }
+
+        public ActionResult HelloWorld() {
+            return Content("Hello World");
+
+        }
     }
 }
