@@ -22,6 +22,11 @@ namespace ProjectManagement.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult RedirectToActionInHomeController()
+        {
+            return RedirectToAction("ProjectManagemnet.Controllers.HomeController.Index");
+        }
+
 
 
 
