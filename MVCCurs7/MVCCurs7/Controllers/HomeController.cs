@@ -27,13 +27,18 @@ namespace MVCCurs7.Controllers
             }
             return sum;
         }
-        [HttpPost]
+        [HttpGet]
         public string VerbsTest() {
             return "Hello";
         }
 
         public int displayCalc() {
             return Calc();
+        }
+        [ActionName("authorize")]
+        [Authorize(Roles ="Admin")]
+        public ActionResult ThisMethodNeedsAuthorization()
+        { return Content("Hello!!!");
         }
     }
 }
