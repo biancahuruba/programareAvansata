@@ -13,11 +13,7 @@
 </p>
 @foreach (var item in Model)
 {
-    <div class="evaluation">
-        <h4>@item.Id,@item.Name</h4>
-        <span>@item.Rating</span>
-        <p>@item.City, @item.Country</p>
-    </div>
+    @Html.Partial("~/Views/Evaluation/_Evaluation.cshtml", item);
 }
 
 @foreach (var item in Model) {
