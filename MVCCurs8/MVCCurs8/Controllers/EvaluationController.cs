@@ -56,8 +56,10 @@ namespace MVCCurs8.Controllers
             try
             {
                 // TODO: Add update logic here
-                var evaluation = listOfProject.Single(e => e.Id == id); 
-                return RedirectToAction("Index");
+                var evaluation = listOfProject.Single(e => e.Id == id);
+                if (TryUpdateModel(evaluation))
+                { return RedirectToAction("Index"); }
+                return View(evaluation);
             }
             catch
             {
@@ -87,12 +89,12 @@ namespace MVCCurs8.Controllers
             }
         }
 
-        public ActionResult Save(int id, FormCollection collection) {
-            var evaluation = listOfProject.Single(e => e.Id == id);
-            if (TryUpdateModel(evaluation))
-            { return RedirectToAction("Index"); }
-            return View(evaluation);
-        }
+        //public ActionResult Save(int id, FormCollection collection) {
+        //    var evaluation = listOfProject.Single(e => e.Id == id);
+        //    if (TryUpdateModel(evaluation))
+        //    { return RedirectToAction("Index"); }
+        //    return View(evaluation);
+        //}
 
         public static List<ProjectEvaluation> listOfProject = new List<ProjectEvaluation>()
         {
@@ -102,6 +104,7 @@ namespace MVCCurs8.Controllers
                 City="Cluj",
                 Country="Romania",
                 Rating=1,
+                Description="description1",
 
             },
             new ProjectEvaluation() {
@@ -110,6 +113,7 @@ namespace MVCCurs8.Controllers
                 City="Deda",
                 Country="Romania",
                 Rating=9,
+                Description="description2",
             },
             new ProjectEvaluation() {
                 Id=3,
@@ -117,6 +121,7 @@ namespace MVCCurs8.Controllers
                 City="<script>alert(‘xss’);</script>",
                 Country="Romania",
                 Rating=10,
+                Description="description3",
             }
         };
 
