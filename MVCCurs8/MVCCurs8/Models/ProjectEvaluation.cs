@@ -18,6 +18,7 @@ namespace MVCCurs8.Models
         [Display(Name="Descriere")]
         [MaxWords(3)]
         public string Description { get;  set; }
+        [NameNotNull]
         public string Name { get; set; }
 
         public string City { get; set; }
